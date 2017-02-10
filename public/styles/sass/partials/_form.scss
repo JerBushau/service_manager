@@ -1,0 +1,52 @@
+// form element style
+#formWrapper {
+	min-width: 411px;
+	form {
+		text-align: center;
+		background: $nearGrey;
+		border-bottom: $twenty solid $baseFontColor;
+		border-top: $twenty solid $baseFontColor;
+		border-radius: 2px;
+		display: block;
+		margin: 15px auto;
+		width: 92%;
+		transition: all .5s;
+		padding: $ten;
+		input {
+			text-align: left;
+  		margin: 8px;
+  		background: $white;
+  		border: 1px solid $darkerGrey;
+		}
+		textarea {
+  		font-family: $baseFont;
+  		font-size: .88888em;
+  		background: $white;
+  		border: 1px solid $darkerGrey;
+      width: 80%;
+		}
+    label {
+      white-space: pre;
+    }
+		button {
+			background: none;
+   	 	font-size: $baseFontSmall;
+    	border: none;
+    	color: $darkestGrey;
+    	text-decoration: none;
+    	transition: all .5s;
+    	&:hover, &:active {
+    		color: $addBlue;
+    			border:none;
+    	}
+    	&:disabled {
+    		color: $disabledGrey;
+    	}
+  	}
+  }
+  @media screen and (max-width: 860px) {
+  	.toggle-btn {
+  		display: block;
+  	}
+  }
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- not yet optimized for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Service Manager</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/css/main.css" type="text/css">
+</head>
+
+<body 
+id="top" 
+ng-app="serviceManager" 
+ng-controller="mainCtrl">
+
+  <div id="navWrap">
+    <nav class="nav">
+
+      <form class="sortForm">
+
+        <h3 class="statusHeader" ng-click="getAllCalls()">Status:</h3>
+
+        <input 
+        type="radio"
+        name="status"
+        ng-click="getActiveCalls()">Active
+        
+        <input 
+        type="radio"
+        name="status"
+        ng-click="getCompleteCalls()">Complete
+
+        <h3 class="sortHeader">Sort by:</h3>
+
+        <select 
+        name="sortOptions" 
+        ng-model="prop">
+          <option value="time">Most recent</option>
+          <option value="-time">Oldest</option>
+          <option value="-businessName">Customer name</option>
+          <option value="-tech">Tech name</option>
+        </select>
+
+      </form>
+
+        <span class="toTop" onclick="goToTop()">&#8593;</span>
+
+       <div class="searchbar">
+
+        <label>
+          <input 
+          type="text"
+          placeholder="Search" 
+          ng-model="search">
+        </label>
+
+       </div>
+
+    </nav>
+  </div>
+
+  <div class="mainActions">
+    <a class="toggleBtn" ng-click="form = !form">Click to toggle form</a>
+    <a class="toggleBtn">Asset manager</a>
+  </div>
+
+  <div class="list">
+
+    <div id="formWrapper" ng-show="form">
+
+      <div class="form add">
+
+        <form ng-show="form" name="callInput">
+
+          <label>Customer:</label>
+          <input 
+          type="text" 
+          ng-model="call.businessName" 
+          required/>
+
+          <br>
+
+          <label>Contact:</label>
+          <input type="text" ng-model="call.contactName"/>
+
+          <br>
+
+          <label>Tech:</label>
+          <input type="text" ng-model="call.tech">
+
+          <br>
+
+          <label>Phone:</label>
+          <input type="text" ng-model="call.phone">
+
+          <br>
+
+          <label>Description:</label>
+          <br>
+          <textarea 
+          ng-model="call.description" 
+          rows="10" 
+          cols="35" 
+          required></textarea>
+
+          <br>
+
+          <button 
+          ng-click="addCall(call)" 
+          ng-disabled="!call.description">Add Call</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="callContainer">
+      <call></call>
+    </div>
+
+  </div> <!-- END LIST -->
+
+  <footer>Jerbuilt 2k16</footer>
+  
+  <!-- scripts -->
+  <script 
+  src="http://code.jquery.com/jquery-3.1.1.min.js" 
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" 
+  crossorigin="anonymous"></script>
+  <script src="/scripts/vendor.bundle.js"></script>
+  <script src="/vendor/jquery.sticky.js"></script>
+  <script src="/scripts/call.bundle.js"></script>
+  <script src="/scripts/stickie.js"></script>
+
+</body>
+</html>

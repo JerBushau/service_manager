@@ -1,0 +1,87 @@
+// nav element style
+nav {
+	background: $lightGrey;
+	display: flex;
+	justify-content: space-between;
+	transition: all .5s;
+	border-radius: 2px;
+  .is-sticky & {
+  // height: 70px;
+  background: rgba(211, 211, 211, 0.8);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+  .toTop {
+    display: block;
+    cursor: pointer;
+  }
+}
+  .statusHeader {
+     cursor: pointer;
+     transition: color 1s;
+     &:hover {
+      color: $nearWhite;
+      border-bottom: 1px solid $darkestGrey;
+     }
+     &:active {
+      color: $grey;
+     }
+  }
+  .toTop {
+    display: none;
+    font-size: 2em;
+    border-radius: 10px;
+    width: 1em;
+    transition: all .5s;
+    &:hover {
+      color: $nearGrey;
+      background-color: $grey;
+      border: 1px solid $darkestGrey;
+    }
+    &:active {
+      color: $darkestGrey;
+    }
+  }
+  .sortHeader, .statusHeader {
+    margin: 0 10px;
+    position: relative;
+  }
+  .sortForm {
+    margin: auto 10px;
+      display: flex;
+      flex-direction: row;
+  }
+  select {
+    font-size: .777em;
+  }
+	// search input
+  .searchbar {
+    display: inline-flex;
+    margin: auto 0;
+    align-self: flex-end;
+    label {
+      padding: $ten;
+      input {
+        background: $white;
+        border: 1px solid $darkerGrey;
+        color: $darkestGrey;
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+        &:focus {
+          
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 860px) {
+    flex-direction: row;
+    .searchbar {
+    display: inline-flex;
+    margin: auto;
+    }
+    .sortHeader, .statusHeader {
+      display: none;
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+TODO:
+
+	Re-write entire application for practice/further understanding of angular.
+
+	possibly implement "re-run" display to link related calls 
+		just adding a re-run flag to the calls would allow me to sort by re-run and business name. That way all re-runs would display in order of busniess name to link related calls
+
+	real time updates with socket.io (? possibly use some angular built-in to achieve similar behavior)
+		this could potentially branch into a browser extention for the app.
+
+  	(**done**)rewrite css using sass
+  	refactor sass
+
+	further refactor angular scripts
+		need to create form controller so that form tasks are not cluttering the main ctrl?
+			
+	explore custom directives further and try to gain a better understanding of how ngTransclude works with $scope
+
+	add route for employoees to veiw calls but not edit them.
+
+	(**done**)research implementing sorting/searches the correct way (probably angular output)
+		(**done**)use angulars ngRepeat with orderBy and/or filter to sort data
+
+IMPORTANT ASPECTS: 
+	
+	call entry format. 
+		Keeping all the information in one place, easy to access and update.
+
+	sorting the data. 
+		getting the information you want from the page as quickly and easily as possible.
+		
+		create a sorting/search controller to handle these actions and create an attractive menu from which to choose sort/search catagories.
+

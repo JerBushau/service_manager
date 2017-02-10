@@ -1,0 +1,64 @@
+// general page style
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: auto;
+  width: 100%;
+}
+
+body {
+  color: $darkestGrey;
+  font-family: $baseFont;
+  height: auto;
+  text-align: center;
+  background: $darkerGrey;
+  font-size: $baseFontSize; 
+  min-width: 450px; 
+  a {
+  	text-decoration: none; 
+  	cursor: pointer;
+	}
+	textarea {
+		color: $darkestGrey;
+		background: $white;
+		font-family: $baseFont;
+		font-size: .8999em;
+	}
+	select {
+		margin-left: .5em;
+		color: $darkestGrey;
+	}
+	input {
+		color: $darkestGrey;
+		background: $white;
+	  text-align: left;
+	  padding-left: 5px;
+	  font-size: .7em;
+	}
+	input[type="checkbox"] {
+	    display:none;
+	}
+	input[type="checkbox"] + span {
+	    display:inline-block;
+	    width:19px;
+	    height:19px;
+	    margin:-1px 4px 0 0;
+	    vertical-align:middle;
+	    background:url('../checkbox-empty.svg') left top no-repeat;
+	    cursor:pointer;
+	}
+	input[type="checkbox"]:checked + span {
+	    background:url('../checkbox-filled.svg') left top no-repeat;
+	}
+	footer {
+  	padding-bottom: $twenty;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	body, html {
+  	margin: 10px 0 0;
+	}
+}
