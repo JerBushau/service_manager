@@ -1,6 +1,6 @@
 Service manager application
 ---------------------------
-This application was created to help track the progress of recieving service calls. 
+This application was created to help track the progress of service calls. 
 
 It does this by collecting all the necessary information from user input at the time of call and formatting that info into a neat table. It also allows the user to keep that information up to date as the situation progresses. 
 
