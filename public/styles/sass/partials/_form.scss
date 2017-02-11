@@ -27,6 +27,9 @@
 		}
     label {
       white-space: pre;
+      align-self: flex-end;
+      margin: 8px;
+      font-size: .866666em;
     }
 		button {
 			background: none;
@@ -43,6 +46,21 @@
     		color: $disabledGrey;
     	}
   	}
+    .form-inner-wrapper {
+      display: flex;
+    }
+    .form-labels {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 35%;
+    }
+    .form-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 45%;
+    }
   }
   @media screen and (max-width: 860px) {
   	.toggle-btn {

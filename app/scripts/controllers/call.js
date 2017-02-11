@@ -32,7 +32,6 @@ function CallCtrl ($scope, dataService) {
     call.edited = false;
     singleCall.push(call);
     dataService.saveCalls(singleCall);
-
   }
 
 }

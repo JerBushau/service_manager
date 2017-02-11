@@ -37,7 +37,7 @@ function DataService ($http, $q) {
       }
       queue.push(request);
     });
-    // $q is an angular service
+    // $q is an angular service that helps you run functions asynchronously
     return $q.all(queue).then(function(results) {
       console.log("I saved " + calls.length + " call(s)!");
     });

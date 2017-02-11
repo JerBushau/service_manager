@@ -137,7 +137,10 @@ nav {
       border: 1px solid #696969;
       width: 80%; }
     #formWrapper form label {
-      white-space: pre; }
+      white-space: pre;
+      align-self: flex-end;
+      margin: 8px;
+      font-size: .866666em; }
     #formWrapper form button {
       background: none;
       font-size: 1em;
@@ -150,6 +153,18 @@ nav {
         border: none; }
       #formWrapper form button:disabled {
         color: #777777; }
+    #formWrapper form .form-inner-wrapper {
+      display: flex; }
+    #formWrapper form .form-labels {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 35%; }
+    #formWrapper form .form-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 45%; }
   @media screen and (max-width: 860px) {
     #formWrapper .toggle-btn {
       display: block; } }

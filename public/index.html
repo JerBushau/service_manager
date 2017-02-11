@@ -33,9 +33,7 @@ ng-controller="mainCtrl">
 
         <h3 class="sortHeader">Sort by:</h3>
 
-        <select 
-        name="sortOptions" 
-        ng-model="prop">
+        <select name="sortOptions" ng-model="prop">
           <option value="time">Most recent</option>
           <option value="-time">Oldest</option>
           <option value="-businessName">Customer name</option>
@@ -73,35 +71,33 @@ ng-controller="mainCtrl">
 
         <form ng-show="form" name="callInput">
 
-          <label>Customer:</label>
-          <input 
-          type="text" 
-          ng-model="call.businessName" 
-          required/>
+          <div class="form-inner-wrapper">
+            <div class="form-labels">
+              <label for="customer">Customer:</label>
+              <label for="contact">Contact:</label>
+              <label for="tech">Tech:</label>
+              <label for="phone">Phone:</label>
+            </div>
 
-          <br>
+            <div class="form-inputs">
+              <input 
+              name="customer" 
+              type="text" 
+              ng-model="call.businessName" 
+              required/>
+              <input name="contact" type="text" ng-model="call.contactName"/>
+              <input name="tech" type="text" ng-model="call.tech">
+              <input name="phone" type="text" ng-model="call.phone">
+            </div>
+          </div>
 
-          <label>Contact:</label>
-          <input type="text" ng-model="call.contactName"/>
-
-          <br>
-
-          <label>Tech:</label>
-          <input type="text" ng-model="call.tech">
-
-          <br>
-
-          <label>Phone:</label>
-          <input type="text" ng-model="call.phone">
-
-          <br>
-
-          <label>Description:</label>
+          <label for="decription">Description:</label>
           <br>
           <textarea 
-          ng-model="call.description" 
+          name="description" 
           rows="10" 
           cols="35" 
+          ng-model="call.description" 
           required></textarea>
 
           <br>

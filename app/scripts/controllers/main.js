@@ -43,22 +43,26 @@ function MainCtrl ($scope, dataService) {
    
   $scope.addCall = function(call) {
     $scope.call.time = new Date();
-    $scope.calls.unshift({businessName: call.businessName,
-              					  contactName: call.contactName,
-                          tech: call.tech,
-              					  phone: call.phone,
-              					  description: call.description,
-                          time: call.time,
-                      	  completed: false});
+    $scope.calls.unshift({
+      businessName: call.businessName,
+  	  contactName: call.contactName,
+      tech: call.tech,
+  	  phone: call.phone,
+  	  description: call.description,
+      time: call.time,
+  	  completed: false
+    });
     
     dataService.saveCalls($scope.calls);
 
-    $scope.call = {businessName: "",
-                   contactName: "",
-                   tech: "",
-                   phone: "",
-                   description: "",
-                   completed: ""};
+    $scope.call = {
+      businessName: "",
+      contactName: "",
+      tech: "",
+      phone: "",
+      description: "",
+      completed: ""
+    };
                    
     $scope.getAllCalls()
   }; 
