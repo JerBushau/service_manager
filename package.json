@@ -5,6 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
     "start-app-dev": "nodemon src/app.js",
     "watch-js": "nodemon -e js --watch app/ -x \"npm run webpack-app\"",
     "watch-sass": "nodemon -e scss --watch public/styles/sass/ -x \"npm run compile-sass\"",
