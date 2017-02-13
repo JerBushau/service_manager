@@ -9,5 +9,5 @@ The user can sort and search through that info as needed from any PC connected t
 To run the application:
   + clone repo
   + npm install
-  + node src/app.js
+  + npm start
   + check localhost:3000

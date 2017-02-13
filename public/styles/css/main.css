@@ -172,7 +172,7 @@ nav {
 .list {
   background: #D4D4D4;
   border-bottom: 20px solid #adadad;
-  border-radius: 0 2px 2px 2px;
+  border-radius: 0px 0px 2px 2px;
   display: flex;
   height: auto;
   margin: 0 auto;
@@ -187,7 +187,7 @@ nav {
       border-bottom: 8px solid #696969;
       border-radius: 5px 0 0 10px;
       padding: 15px; }
-      .list .callContainer .item label {
+      .list .callContainer .item label ~ label {
         cursor: pointer; }
       .list .callContainer .item .editingLabel {
         border-radius: 2px;
@@ -265,8 +265,7 @@ nav {
     border-radius: 0 2px 0 0; }
   .toggleBtn:hover {
     color: #444444;
-    background-color: #EFEFEF;
-    border-bottom: 1px solid #444444; }
+    background-color: #EFEFEF; }
   .toggleBtn:active {
     background-color: #adadad; }
   @media screen and (max-width: 860px) {

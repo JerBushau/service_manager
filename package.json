@@ -5,9 +5,15 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start-app-dev": "nodemon src/app.js",
+    "watch-js": "nodemon -e js --watch app/ -x \"npm run webpack-app\"",
+    "watch-sass": "nodemon -e scss --watch public/styles/sass/ -x \"npm run compile-sass\"",
+    "webpack-app": "webpack",
+    "compile-sass": "sass --cache-location public/styles/sass/.sass-cache public/styles/sass/main.scss public/styles/css/main.css",
+    "dev-mode": "npm run start-app-dev & npm run watch-sass & npm run watch-js"
   },
   "author": "Jeremiah Bushau",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular": "^1.4.8",
     "body-parser": "1.14.2",

@@ -2,7 +2,7 @@
 .list {
 	background: $darkGrey;
   border-bottom: $twenty solid $borderGrey ;
-  border-radius: 0 2px 2px 2px;
+  border-radius: 0px 0px 2px 2px;
   display: flex;
   height: auto;
   margin: 0 auto;
@@ -16,8 +16,9 @@
 	  	background: $nearGrey;
 	    border-bottom: 8px solid $darkerGrey;
 	    border-radius: 5px 0 0 $ten;
-	    padding: 15px;
-	    label {
+	    padding: 15px; 
+	    // select every label that comes after the first label inside .item
+	    label ~ label {
 	    	cursor: pointer;
 	    }
 	    .editingLabel {

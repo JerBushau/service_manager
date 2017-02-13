@@ -69,7 +69,7 @@ webpackJsonp([0],[
 	      }
 	      queue.push(request);
 	    });
-	    // $q is an angular service
+	    // $q is an angular service that helps you run functions asynchronously
 	    return $q.all(queue).then(function(results) {
 	      console.log("I saved " + calls.length + " call(s)!");
 	    });
@@ -168,22 +168,26 @@ webpackJsonp([0],[
 	   
 	  $scope.addCall = function(call) {
 	    $scope.call.time = new Date();
-	    $scope.calls.unshift({businessName: call.businessName,
-	              					  contactName: call.contactName,
-	                          tech: call.tech,
-	              					  phone: call.phone,
-	              					  description: call.description,
-	                          time: call.time,
-	                      	  completed: false});
+	    $scope.calls.unshift({
+	      businessName: call.businessName,
+	  	  contactName: call.contactName,
+	      tech: call.tech,
+	  	  phone: call.phone,
+	  	  description: call.description,
+	      time: call.time,
+	  	  completed: false
+	    });
 	    
 	    dataService.saveCalls($scope.calls);
 
-	    $scope.call = {businessName: "",
-	                   contactName: "",
-	                   tech: "",
-	                   phone: "",
-	                   description: "",
-	                   completed: ""};
+	    $scope.call = {
+	      businessName: "",
+	      contactName: "",
+	      tech: "",
+	      phone: "",
+	      description: "",
+	      completed: ""
+	    };
 	                   
 	    $scope.getAllCalls()
 	  }; 
@@ -231,7 +235,6 @@ webpackJsonp([0],[
 	    call.edited = false;
 	    singleCall.push(call);
 	    dataService.saveCalls(singleCall);
-
 	  }
 
 	}
