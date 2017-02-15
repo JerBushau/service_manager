@@ -1,15 +1,12 @@
-// angular loading bar
+//angular loading bar
 #loading-bar {
   .bar {
-    background: $nearWhite;
+    background: $saveGreen;
   }
   &-spinner .spinner-icon {
-    border:  solid 2px transparent;
-    border-top-color: $nearWhite;
-    border-left-color: $nearWhite;
+    display: none;
   }
 }
-  
 
 // nav element style
 nav {
