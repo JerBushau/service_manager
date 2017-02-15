@@ -6,7 +6,10 @@ webpackJsonp([0],[
 
 	var angular = __webpack_require__(1);
 
-	angular.module('serviceManager', []);
+	angular.module('serviceManager', ['angular-loading-bar'])
+	.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+	    cfpLoadingBarProvider.latencyThreshold = 1;
+	  }]);
 
 	__webpack_require__(3);
 	__webpack_require__(5);

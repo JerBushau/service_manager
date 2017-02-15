@@ -48,6 +48,13 @@ body {
 @media screen and (max-width: 860px) {
   body, html {
     margin: 10px 0 0; } }
+#loading-bar .bar {
+  background: whitesmoke; }
+#loading-bar-spinner .spinner-icon {
+  border: solid 2px transparent;
+  border-top-color: whitesmoke;
+  border-left-color: whitesmoke; }
+
 nav {
   background: #adadad;
   display: flex;
