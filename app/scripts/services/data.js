@@ -6,14 +6,6 @@ function DataService ($http, $q) {
     $http.get('/api/calls').then(cb);
   }
 
-  this.getCompleteCalls = function(cb) {
-    $http.get('/api/complete').then(cb)
-  }
-
-  this.getActiveCalls = function(cb) {
-    $http.get('/api/active').then(cb)
-  }
-
   this.deleteCall = function(call) {
     if (!call._id) {
       return $q.resolve();

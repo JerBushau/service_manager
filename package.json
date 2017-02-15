@@ -4,7 +4,7 @@
   "description": "An application to organize service calls.",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test YET specified\" && exit 1",
     "start": "node src/app.js",
     "start-app-dev": "nodemon src/app.js",
     "watch-js": "nodemon -e js --watch app/ -x \"npm run webpack-app\"",

@@ -5,11 +5,6 @@ function MainCtrl ($scope, dataService) {
   $scope.form = true;
   $scope.reverse = true;
 
-  $scope.sortBy = function(prop) {
-    $scope.prop = prop;
-    $scope.search = '';
-  }
-
   $scope.getAllCalls = function() {
     dataService.getCalls(function(response) {
       var calls = response.data.calls;
@@ -20,20 +15,6 @@ function MainCtrl ($scope, dataService) {
   };
 
   $scope.getAllCalls();
-
-  $scope.getCompleteCalls = function() {
-    dataService.getCompleteCalls(function(response) {
-      var calls = response.data.calls;
-      $scope.calls = calls;
-    });
-  };
-
-  $scope.getActiveCalls = function() {
-    dataService.getActiveCalls(function(response) {
-      var calls = response.data.calls;
-      $scope.calls = calls;
-    });
-  };
    
   $scope.addCall = function(call) {
     $scope.call.time = new Date();
