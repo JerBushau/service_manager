@@ -127,7 +127,6 @@ webpackJsonp([0],[
 
 	function MainCtrl ($scope, dataService) {
 	  $scope.prop = 'time';
-	  $scope.search = $scope.query;
 	  $scope.form = true;
 	  $scope.reverse = true;
 
@@ -138,15 +137,10 @@ webpackJsonp([0],[
 
 	  $scope.getAllCalls = function() {
 	    dataService.getCalls(function(response) {
-	      var radioInput = document.getElementsByName("status");
 	      var calls = response.data.calls;
 	      // refresh calls
 	      $scope.calls = calls;
 	      $scope.search = '';
-	      // uncheck current status selection
-	      for(var i=0; i < radioInput.length; i++) {
-	        radioInput[i].checked = false;
-	      }
 	    });
 	  };
 

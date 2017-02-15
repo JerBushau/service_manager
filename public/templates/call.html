@@ -1,7 +1,7 @@
 <div 
   class="item serviceCall"
   ng-class="{'editing-item': editing, 'edited': call.edited, 'completed': call.completed}"
-  ng-repeat="call in calls | orderBy: prop: reverse | filter: search"
+  ng-repeat="call in calls | orderBy: prop: reverse | filter: status | filter: search"
   ng-init="call.completed = call.completed">
 
   <div class="actions" ng-show="editing">
@@ -98,6 +98,8 @@
   class="editingTextarea" 
   rows="6" 
   cols="47" 
-  placeholder="Enter additional notes here." ng-model="call.note" ng-show="editing"></textarea>
+  placeholder="Enter additional notes here." 
+  ng-model="call.note" 
+  ng-show="editing"></textarea>
 
 </div>

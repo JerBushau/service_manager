@@ -21,19 +21,13 @@ ng-controller="mainCtrl">
 
         <h3 class="statusHeader" ng-click="getAllCalls()">Status:</h3>
 
-        <input 
-        type="radio"
-        name="status"
-        ng-click="getActiveCalls()">Active
-        
-        <input 
-        type="radio"
-        name="status"
-        ng-click="getCompleteCalls()">Complete
+        <select name="statusOptions" ng-model="status.completed">
+          <option value="">All</option>
+          <option value="false">Active</option>
+          <option value="true">Complete</option>
+        </select>
 
-        <h3 class="sortHeader">Sort by:</h3>
-
-        <select name="sortOptions" ng-model="prop">
+        <h3 class="sortHeader">Sort by:</h3><select name="sortOptions" ng-model="prop">
           <option value="time">Most recent</option>
           <option value="-time">Oldest</option>
           <option value="-businessName">Customer name</option>
@@ -118,7 +112,7 @@ ng-controller="mainCtrl">
 
   </div> <!-- END LIST -->
 
-  <footer>Jerbuilt 2k16</footer>
+  <footer>Jerbuilt 2k17</footer>
   
   <!-- scripts -->
   <script 
