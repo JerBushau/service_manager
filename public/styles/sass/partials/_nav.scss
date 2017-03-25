@@ -2,6 +2,7 @@
 #loading-bar {
   .bar {
     background: $saveGreen;
+    height: 3px;
   }
   &-spinner .spinner-icon {
     display: none;
@@ -15,21 +16,25 @@ nav {
 	justify-content: space-between;
 	transition: all .5s;
 	border-radius: 2px;
+  height: auto;
   .is-sticky & {
-  // height: 70px;
-  background: rgba(211, 211, 211, 0.8);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
-  .toTop {
-    display: block;
-    cursor: pointer;
+    background: rgba(211, 211, 211, 0.8);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    .toTop {
+      display: block;
+      cursor: pointer;
+    }
   }
-}
-  .statusHeader {
+  .refresh {
+    font-size: 1.5em;
      cursor: pointer;
-     transition: color 1s;
+     align-self: center;
+     margin: .5em;
+     transition: all .5s;
+     transform: rotate(180deg);
      &:hover {
       color: $nearWhite;
-      border-bottom: 1px solid $darkestGrey;
+      transform: rotate(540deg);
      }
      &:active {
       color: $grey;
@@ -37,27 +42,25 @@ nav {
   }
   .toTop {
     display: none;
-    font-size: 2em;
-    border-radius: 10px;
-    width: 1em;
+    font-size: 1.5em;
+    align-self: center;
+    width: 20px;
+    transform: rotate(270deg);
     transition: all .5s;
     &:hover {
-      color: $nearGrey;
-      background-color: $grey;
-      border: 1px solid $darkestGrey;
-    }
+      color: $nearGrey;    }
     &:active {
       color: $darkestGrey;
     }
   }
-  .sortHeader, .statusHeader {
-    margin: 0 10px;
+  h3 {
+    margin: auto 10px;
     position: relative;
   }
   .sortForm {
     margin: auto 10px;
-      display: flex;
-      flex-direction: row;
+    display: flex;
+    flex-direction: row;
   }
   select {
     font-size: .777em;
@@ -69,27 +72,24 @@ nav {
     align-self: flex-end;
     label {
       padding: $ten;
-      input {
-        background: $white;
-        border: 1px solid $darkerGrey;
-        color: $darkestGrey;
-        height: 30px;
-        width: 100%;
-        text-align: center;
-        font-size: 1em;
-        &:focus {
-          
-        }
+    }
+    input {
+      background: $white;
+      border: 1px solid $darkerGrey;
+      color: $darkestGrey;
+      height: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
+      &:focus {
+        
       }
     }
   }
   @media screen and (max-width: 860px) {
     flex-direction: row;
-    .searchbar {
-    display: inline-flex;
-    margin: auto;
-    }
-    .sortHeader, .statusHeader {
+    
+    h3 {
       display: none;
     }
   }

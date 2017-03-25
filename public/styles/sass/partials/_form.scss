@@ -17,10 +17,11 @@
   		margin: 8px;
   		background: $white;
   		border: 1px solid $darkerGrey;
+      height: 19px;
 		}
 		textarea {
   		font-family: $baseFont;
-  		font-size: .88888em;
+  		/* font-size: .88888em; */
   		background: $white;
   		border: 1px solid $darkerGrey;
       width: 80%;

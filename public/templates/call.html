@@ -1,6 +1,6 @@
 <div 
-  class="item serviceCall"
-  ng-class="{'editing-item': editing, 'edited': call.edited, 'completed': call.completed}"
+  class="call serviceCall"
+  ng-class="{'edited': call.edited, 'completed': call.completed}"
   ng-repeat="call in calls | orderBy: prop: reverse | filter: status | filter: search"
   ng-init="call.completed = call.completed">
 
