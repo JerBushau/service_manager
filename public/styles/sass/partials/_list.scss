@@ -2,7 +2,7 @@
 .list {
 	background: $darkGrey;
   border-bottom: $twenty solid $borderGrey ;
-  border-radius: 0 2px 2px 2px;
+  border-radius: 0px 0px 2px 2px;
   display: flex;
   height: auto;
   margin: 0 auto;
@@ -12,78 +12,6 @@
   width: 90%;
   .callContainer {
   	width: 100%;
-	  .item {
-	  	background: $nearGrey;
-	    border-bottom: 8px solid $darkerGrey;
-	    border-radius: 5px 0 0 $ten;
-	    padding: 15px;
-	    label {
-	    	cursor: pointer;
-	    }
-	    .editingLabel {
-	      border-radius: 2px;
-	      border: 2px solid $labelBorder;
-	      font-family: $baseFont;
-	      font-size: $baseFontSmall;
-	      margin-left: 5px;
-	      width: 60%;
-	 	  }
-	 	  .editingTextarea {
-	 	  	border: 2px solid $labelBorder;
-	      width: 100%;
-	    }
-	    .actions {
-	    	align-items: flex-end;
-	    	display: flex;
-	      flex-direction: column;
-	      float: right;
-	      margin: $ten;
-	      .delete {
-	      	color: $darkestGrey;
-	        transition: all .5s;
-	        &:hover {
-	        	color: $deleteRed;
-	        }
-	      }
-	      .save {
-	      	float: right;
-	  			font-size: 1.5em;
-	  			color: $saveGreen;
-	  			transition: all .5s;
-	  			&:hover {
-	  				color: $saveGreenHov;
-	  			}
-	      }
-	      .chkbox {
-	  			flex-direction: row;
-				}
-	    }
-	    .descrip {
-				justify-content: space-between;
-				white-space: pre-line;
-				border-top: 4px solid $grey; 
-				padding: 15px;
-				background: $darkGrey;
-				display: flex; 
-				flex-direction: column;
-			}
-			.noted {
-		  	background: $noteYellow; 
-				align-self: flex-end;
-			  margin: 15px 0 0 0;
-			  min-width: 200px;
-			  border-top: 3px solid $grey;
-			}
-	  }
-	  .name {
-		  font-size: 1.311em;
-		  text-decoration: underline;
-		  color: $darkestGrey;
-		}
-	  .completed label {
-			color: $disabledGrey;
-	    text-decoration: line-through;
-		}
 	}
 	@media screen and (max-width: 860px) {
     width: 100%;

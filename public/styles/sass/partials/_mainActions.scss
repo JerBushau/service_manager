@@ -3,26 +3,21 @@
   flex-direction: row;
 }
 
-// form toggler
+// form toggle btn
 .toggleBtn{
 	display: block;
   padding: $ten 15px;
-  border-radius: 2px 0 0 0;
+  border-radius: 2px 2px 0 0;
   color: $darkestGrey;
   background-color: $borderGrey;
   transition: width .5s, background-color .1s;
   text-align: center;
-  margin: $twenty 0 0 auto;
-  width: 45%;
+  margin: $twenty auto 0;
+  width: 90%;
   transition: background-color .5s;
-  & + & {
-    margin: $twenty auto 0 0;
-    border-radius: 0 2px 0 0;
-  }
   &:hover {
     color: $darkestGrey;
     background-color: $nearGrey;
-    border-bottom: 1px solid $darkestGrey;
   }
   &:active {
     background-color: $lightGrey;

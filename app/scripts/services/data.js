@@ -6,14 +6,6 @@ function DataService ($http, $q) {
     $http.get('/api/calls').then(cb);
   }
 
-  this.getCompleteCalls = function(cb) {
-    $http.get('/api/complete').then(cb)
-  }
-
-  this.getActiveCalls = function(cb) {
-    $http.get('/api/active').then(cb)
-  }
-
   this.deleteCall = function(call) {
     if (!call._id) {
       return $q.resolve();
@@ -37,7 +29,7 @@ function DataService ($http, $q) {
       }
       queue.push(request);
     });
-    // $q is an angular service
+    // $q is an angular service that helps you run functions asynchronously
     return $q.all(queue).then(function(results) {
       console.log("I saved " + calls.length + " call(s)!");
     });

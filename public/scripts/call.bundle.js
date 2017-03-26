@@ -6,7 +6,10 @@ webpackJsonp([0],[
 
 	var angular = __webpack_require__(1);
 
-	angular.module('serviceManager', []);
+	angular.module('serviceManager', ['angular-loading-bar'])
+	.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+	    cfpLoadingBarProvider.latencyThreshold = 1;
+	  }]);
 
 	__webpack_require__(3);
 	__webpack_require__(5);
@@ -38,14 +41,6 @@ webpackJsonp([0],[
 	    $http.get('/api/calls').then(cb);
 	  }
 
-	  this.getCompleteCalls = function(cb) {
-	    $http.get('/api/complete').then(cb)
-	  }
-
-	  this.getActiveCalls = function(cb) {
-	    $http.get('/api/active').then(cb)
-	  }
-
 	  this.deleteCall = function(call) {
 	    if (!call._id) {
 	      return $q.resolve();
@@ -69,7 +64,7 @@ webpackJsonp([0],[
 	      }
 	      queue.push(request);
 	    });
-	    // $q is an angular service
+	    // $q is an angular service that helps you run functions asynchronously
 	    return $q.all(queue).then(function(results) {
 	      console.log("I saved " + calls.length + " call(s)!");
 	    });
@@ -127,63 +122,42 @@ webpackJsonp([0],[
 
 	function MainCtrl ($scope, dataService) {
 	  $scope.prop = 'time';
-	  $scope.search = $scope.query;
 	  $scope.form = true;
 	  $scope.reverse = true;
 
-	  $scope.sortBy = function(prop) {
-	    $scope.prop = prop;
-	    $scope.search = '';
-	  }
-
 	  $scope.getAllCalls = function() {
 	    dataService.getCalls(function(response) {
-	      var radioInput = document.getElementsByName("status");
 	      var calls = response.data.calls;
 	      // refresh calls
 	      $scope.calls = calls;
 	      $scope.search = '';
-	      // uncheck current status selection
-	      for(var i=0; i < radioInput.length; i++) {
-	        radioInput[i].checked = false;
-	      }
 	    });
 	  };
 
 	  $scope.getAllCalls();
-
-	  $scope.getCompleteCalls = function() {
-	    dataService.getCompleteCalls(function(response) {
-	      var calls = response.data.calls;
-	      $scope.calls = calls;
-	    });
-	  };
-
-	  $scope.getActiveCalls = function() {
-	    dataService.getActiveCalls(function(response) {
-	      var calls = response.data.calls;
-	      $scope.calls = calls;
-	    });
-	  };
 	   
 	  $scope.addCall = function(call) {
 	    $scope.call.time = new Date();
-	    $scope.calls.unshift({businessName: call.businessName,
-	              					  contactName: call.contactName,
-	                          tech: call.tech,
-	              					  phone: call.phone,
-	              					  description: call.description,
-	                          time: call.time,
-	                      	  completed: false});
+	    $scope.calls.unshift({
+	      businessName: call.businessName,
+	  	  contactName: call.contactName,
+	      tech: call.tech,
+	  	  phone: call.phone,
+	  	  description: call.description,
+	      time: call.time,
+	  	  completed: false
+	    });
 	    
 	    dataService.saveCalls($scope.calls);
 
-	    $scope.call = {businessName: "",
-	                   contactName: "",
-	                   tech: "",
-	                   phone: "",
-	                   description: "",
-	                   completed: ""};
+	    $scope.call = {
+	      businessName: "",
+	      contactName: "",
+	      tech: "",
+	      phone: "",
+	      description: "",
+	      completed: ""
+	    };
 	                   
 	    $scope.getAllCalls()
 	  }; 
@@ -231,7 +205,6 @@ webpackJsonp([0],[
 	    call.edited = false;
 	    singleCall.push(call);
 	    dataService.saveCalls(singleCall);
-
 	  }
 
 	}

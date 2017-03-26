@@ -14,26 +14,6 @@ router.get('/calls', function(req, res) {
   });
 });
 
-// GET active
-router.get('/active', function(req, res) {
-  Call.find({'completed': 'false'}, function(err, calls) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-    res.json({ calls: calls });
-  });
-});
-
-// GET complete
-router.get('/complete', function(req, res) {
-  Call.find({'completed': 'true'}, function(err, calls) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-    res.json({ calls: calls });
-  });
-});
-
 // POST
 router.post('/calls', function(req, res) {
   var call = req.body;
