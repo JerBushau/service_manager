@@ -93,7 +93,7 @@ nav {
     display: none;
     font-size: 1.5em;
     align-self: center;
-    width: 20px;
+    margin: 0 7px 0 0;
     transform: rotate(270deg);
     transition: all .5s; }
     nav .toTop:hover {
@@ -113,14 +113,13 @@ nav {
     display: inline-flex;
     margin: auto 0;
     align-self: flex-end; }
-    nav .searchbar label {
-      padding: 10px; }
     nav .searchbar input {
       background: #ffffff;
       border: 1px solid #696969;
       color: #444444;
       height: 30px;
       width: 100%;
+      margin: 0 15px 0 0;
       text-align: center;
       font-size: 1em; }
   @media screen and (max-width: 860px) {

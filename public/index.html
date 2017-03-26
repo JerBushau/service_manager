@@ -15,46 +15,44 @@
   ng-app="serviceManager" 
   ng-controller="mainCtrl">
 
-    <div id="navWrap">
-      <nav class="nav">
+    
+    <nav class="nav">
 
-        <form class="sortForm">
-          <span class="refresh" ng-click="getAllCalls()">&#8635;</span>
+      <form class="sortForm">
+        <span class="refresh" ng-click="getAllCalls()">&#8635;</span>
 
-          <h3 >Status:</h3>
+        <h3 >Status:</h3>
 
-          <select name="statusOptions" ng-model="status.completed">
-            <option value="">All</option>
-            <option value="false">Active</option>
-            <option value="true">Complete</option>
-          </select>
+        <select name="statusOptions" ng-model="status.completed">
+          <option value="">All</option>
+          <option value="false">Active</option>
+          <option value="true">Complete</option>
+        </select>
 
-          <h3>Sort by:</h3>
+        <h3>Sort by:</h3>
 
-          <select name="sortOptions" ng-model="prop">
-            <option value="time">Most recent</option>
-            <option value="-time">Oldest</option>
-            <option value="-businessName">Customer name</option>
-            <option value="-tech">Tech name</option>
-          </select>
+        <select name="sortOptions" ng-model="prop">
+          <option value="time">Most recent</option>
+          <option value="-time">Oldest</option>
+          <option value="-businessName">Customer name</option>
+          <option value="-tech">Tech name</option>
+        </select>
 
-        </form>
+      </form>
 
-        <span class="toTop" onclick="backToTop()">&#10145;</span>
+      <span class="toTop" onclick="backToTop()">&#10145;</span>
 
-        <div class="searchbar">
+      <div class="searchbar">
 
-          <label>
-            <input 
-            type="text"
-            placeholder="Search" 
-            ng-model="search">
-          </label>
+          <input 
+          type="text"
+          placeholder="Search" 
+          ng-model="search">
 
-        </div>
+      </div>
 
-      </nav>
-    </div>
+    </nav>
+   
 
     <div class="mainActions">
       <a class="toggleBtn" ng-click="form = !form">Click to toggle form</a>

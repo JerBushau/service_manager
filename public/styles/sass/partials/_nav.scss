@@ -44,7 +44,7 @@ nav {
     display: none;
     font-size: 1.5em;
     align-self: center;
-    width: 20px;
+    margin: 0 7px 0 0;
     transform: rotate(270deg);
     transition: all .5s;
     &:hover {
@@ -70,15 +70,13 @@ nav {
     display: inline-flex;
     margin: auto 0;
     align-self: flex-end;
-    label {
-      padding: $ten;
-    }
     input {
       background: $white;
       border: 1px solid $darkerGrey;
       color: $darkestGrey;
       height: 30px;
       width: 100%;
+      margin: 0 15px 0 0;
       text-align: center;
       font-size: 1em;
       &:focus {
