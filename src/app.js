@@ -13,6 +13,12 @@ app.use(parser.json());
 
 app.use('/api', router);
 
+// error handler
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(400).send(err.message);
+});
+
 app.listen(3000, function() {
     console.log("Server up on 3000.");
 });
