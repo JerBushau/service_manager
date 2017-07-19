@@ -2,7 +2,7 @@
   background: $nearGrey;
   border-bottom: 8px solid $darkerGrey;
   border-radius: 5px 0 0 $ten;
-  padding: 15px; 
+  padding: 15px;
   // select every label that comes after the first label inside .call
   label ~ label {
     cursor: pointer;
@@ -48,14 +48,14 @@
   .descrip {
     justify-content: space-between;
     white-space: pre-line;
-    border-top: 4px solid $grey; 
+    border-top: 4px solid $grey;
     padding: 15px;
     background: $darkGrey;
-    display: flex; 
+    display: flex;
     flex-direction: column;
   }
   .noted {
-    background: $noteYellow; 
+    background: $noteYellow;
     align-self: flex-end;
     margin: 15px 0 0 0;
     min-width: 200px;
