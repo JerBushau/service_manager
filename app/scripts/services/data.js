@@ -14,7 +14,7 @@ function DataService ($http, $q) {
       return $q.resolve();
     }
     return $http.delete('/api/calls/' + call._id).then(function() {
-      console.log("I deleted the " + call.businessName + " call!");
+      console.log("Deleted the " + call.businessName + " call.");
     });
   }
 
@@ -34,7 +34,7 @@ function DataService ($http, $q) {
     });
 
     return $q.all(queue).then(function(results) {
-      console.log("I saved " + calls.length + " call(s)!");
+      console.log("Saved " + calls.length + " call(s).");
     });
   };
 }

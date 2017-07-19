@@ -63,7 +63,7 @@ __webpack_require__(1);
 
 
 function CallCtrl ($scope, dataService) {
-  
+
   $scope.deleteCall = function(call, index) {
     dataService.deleteCall(call).then(function() {
       $scope.calls.splice(index, 1);
@@ -73,7 +73,8 @@ function CallCtrl ($scope, dataService) {
       });
     });
   };
- 
+
+ // save all calls
   $scope.saveCalls = function() {
     var filteredCalls = $scope.calls.filter(function(call) {
         return call
@@ -88,7 +89,8 @@ function CallCtrl ($scope, dataService) {
       });
   }
 
-   $scope.saveCall = function(call) {
+  // save single call
+  $scope.saveCall = function(call) {
     var singleCall = [];
 
     call.edited = false;
@@ -113,6 +115,7 @@ function MainCtrl ($scope, dataService) {
   $scope.form = true;
   $scope.reverse = true;
 
+  // get calls from db
   $scope.getAllCalls = function() {
     dataService.getCalls(function(response) {
       var calls = response.data.calls;
@@ -123,7 +126,8 @@ function MainCtrl ($scope, dataService) {
   };
 
   $scope.getAllCalls();
-   
+
+  // add new call
   $scope.addCall = function(call) {
     $scope.call.time = new Date();
     $scope.calls.unshift({
@@ -135,9 +139,10 @@ function MainCtrl ($scope, dataService) {
       time: call.time,
   	  completed: false
     });
-    
+
     dataService.saveCalls($scope.calls);
 
+    // reset form
     $scope.call = {
       businessName: "",
       contactName: "",
@@ -146,9 +151,9 @@ function MainCtrl ($scope, dataService) {
       description: "",
       completed: ""
     };
-                   
+
     $scope.getAllCalls()
-  }; 
+  };
 };
 
 
@@ -180,6 +185,9 @@ module.exports = CallDirective;
 "use strict";
 
 
+// use DataService to get data from api
+// $http is an angular service for making http requests
+// $q is an angular service that helps you run functions asynchronously
 function DataService ($http, $q) {
 
   this.getCalls = function(cb) {
@@ -191,7 +199,7 @@ function DataService ($http, $q) {
       return $q.resolve();
     }
     return $http.delete('/api/calls/' + call._id).then(function() {
-      console.log("I deleted the " + call.businessName + " call!");
+      console.log("Deleted the " + call.businessName + " call.");
     });
   }
 
@@ -209,11 +217,11 @@ function DataService ($http, $q) {
       }
       queue.push(request);
     });
-    // $q is an angular service that helps you run functions asynchronously
+
     return $q.all(queue).then(function(results) {
-      console.log("I saved " + calls.length + " call(s)!");
+      console.log("Saved " + calls.length + " call(s).");
     });
-  }; 
+  };
 }
 
 module.exports = DataService;
