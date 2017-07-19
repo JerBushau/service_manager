@@ -1,7 +1,7 @@
 'use strict';
 
 function CallCtrl ($scope, dataService) {
-  
+
   $scope.deleteCall = function(call, index) {
     dataService.deleteCall(call).then(function() {
       $scope.calls.splice(index, 1);
@@ -11,7 +11,8 @@ function CallCtrl ($scope, dataService) {
       });
     });
   };
- 
+
+ // save all calls
   $scope.saveCalls = function() {
     var filteredCalls = $scope.calls.filter(function(call) {
         return call
@@ -26,7 +27,8 @@ function CallCtrl ($scope, dataService) {
       });
   }
 
-   $scope.saveCall = function(call) {
+  // save single call
+  $scope.saveCall = function(call) {
     var singleCall = [];
 
     call.edited = false;

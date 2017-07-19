@@ -5,6 +5,7 @@ function MainCtrl ($scope, dataService) {
   $scope.form = true;
   $scope.reverse = true;
 
+  // get calls from db
   $scope.getAllCalls = function() {
     dataService.getCalls(function(response) {
       var calls = response.data.calls;
@@ -15,7 +16,8 @@ function MainCtrl ($scope, dataService) {
   };
 
   $scope.getAllCalls();
-   
+
+  // add new call
   $scope.addCall = function(call) {
     $scope.call.time = new Date();
     $scope.calls.unshift({
@@ -27,9 +29,10 @@ function MainCtrl ($scope, dataService) {
       time: call.time,
   	  completed: false
     });
-    
+
     dataService.saveCalls($scope.calls);
 
+    // reset form
     $scope.call = {
       businessName: "",
       contactName: "",
@@ -38,9 +41,9 @@ function MainCtrl ($scope, dataService) {
       description: "",
       completed: ""
     };
-                   
+
     $scope.getAllCalls()
-  }; 
+  };
 };
 
 

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- not yet optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Service Manager</title>
@@ -10,12 +9,12 @@
     <link rel="stylesheet" href="/styles/css/main.css" type="text/css">
   </head>
 
-  <body 
-  id="top" 
-  ng-app="serviceManager" 
+  <body
+  id="top"
+  ng-app="serviceManager"
   ng-controller="mainCtrl">
 
-    
+
     <nav class="nav">
 
       <form class="sortForm">
@@ -44,15 +43,15 @@
 
       <div class="searchbar">
 
-          <input 
+          <input
           type="text"
-          placeholder="Search" 
+          placeholder="Search"
           ng-model="search">
 
       </div>
 
     </nav>
-   
+
 
     <div class="mainActions">
       <a class="toggleBtn" ng-click="form = !form">Click to toggle form</a>
@@ -75,10 +74,10 @@
               </div>
 
               <div class="form-inputs">
-                <input 
-                name="customer" 
-                type="text" 
-                ng-model="call.businessName" 
+                <input
+                name="customer"
+                type="text"
+                ng-model="call.businessName"
                 required/>
                 <input name="contact" type="text" ng-model="call.contactName"/>
                 <input name="tech" type="text" ng-model="call.tech">
@@ -88,17 +87,17 @@
 
             <label for="decription">Description:</label>
             <br>
-            <textarea 
-            name="description" 
-            rows="10" 
-            cols="35" 
-            ng-model="call.description" 
+            <textarea
+            name="description"
+            rows="10"
+            cols="35"
+            ng-model="call.description"
             required></textarea>
 
             <br>
 
-            <button 
-            ng-click="addCall(call)" 
+            <button
+            ng-click="addCall(call)"
             ng-disabled="!call.description">Add Call</button>
 
           </form>
@@ -114,11 +113,11 @@
     </div> <!-- END LIST -->
 
     <footer>Jerbuilt 2k17</footer>
-    
-    <!-- scripts -->
-    <script 
-    src="http://code.jquery.com/jquery-3.1.1.min.js" 
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" 
+
+    <!-- scripts needs clean up and more reading about webpack..-->
+    <script
+    src="http://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     <script src="/scripts/vendor.bundle.js"></script>
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>

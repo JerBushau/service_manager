@@ -1,5 +1,8 @@
 'use strict';
 
+// use DataService to get data from api
+// $http is an angular service for making http requests
+// $q is an angular service that helps you run functions asynchronously
 function DataService ($http, $q) {
 
   this.getCalls = function(cb) {
@@ -29,11 +32,11 @@ function DataService ($http, $q) {
       }
       queue.push(request);
     });
-    // $q is an angular service that helps you run functions asynchronously
+
     return $q.all(queue).then(function(results) {
       console.log("I saved " + calls.length + " call(s)!");
     });
-  }; 
+  };
 }
 
 module.exports = DataService;

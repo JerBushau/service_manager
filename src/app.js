@@ -1,16 +1,22 @@
 'use strict';
 
 const express = require('express');
-const parser = require('body-parser');
-const router = require('./api');
+var parser = require('body-parser');
+var router = require('./api');
 
-const app = express();
+var app = express();
 
+// hook up db
 require('./database');
 
-app.use('/', express.static('./public'));
-app.use(parser.json());
+// seed data
+require('./seed');
 
+app.use(parser.json());
+// serve up static content
+app.use('/', express.static('./public'));
+
+// set up api route
 app.use('/api', router);
 
 // error handler

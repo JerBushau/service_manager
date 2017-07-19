@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/service-manager', function(err) {
+mongoose.connect('mongodb://localhost/serviceManager', function(err) {
   if (err) {
     console.log('Failed connecting to MongoDB!');
   } else {
