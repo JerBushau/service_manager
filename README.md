@@ -10,6 +10,7 @@ To run the application:
   + run `npm install`
   + run `npm start`
   + checkout `localhost:3000`
+
 Your good to go!
 
 Setting up for development:
@@ -19,4 +20,5 @@ Setting up for development:
   + run `npm install`
   + run `npm run dev-mode`
   + checkout `localhost:3000`
-Now you are ready for development, the sass files will be compiled on changes and the js within app/ directory will be webpacked on changes.
+
+Now you are ready for development, the sass files will be compiled and the js within app/ directory will be webpacked on changes.
