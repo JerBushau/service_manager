@@ -9,7 +9,8 @@ var calls = [
     tech: 'Bill',
     phone: '123-321-1233',
     description: 'Paul said "Some stuff happened and now our refrigeration is broken..." Bill is on the way.',
-    completed: false
+    completed: false,
+    time: '07-14-2017 @ 10:00AM'
   },
   {
     businessName: 'Food store',
@@ -18,7 +19,8 @@ var calls = [
     phone: '123-444-1233',
     description: 'refrigerator is running...',
     note: 'fast!',
-    completed: false
+    completed: false,
+    time: '07-14-2017 @ 11:00AM'
   },
   {
     businessName: 'The Bar',
@@ -26,7 +28,8 @@ var calls = [
     tech: 'Bill',
     phone: '123-321-0000',
     description: 'Beer ain\'t coldnuff.',
-    completed: false
+    completed: false,
+    time: '07-14-2017 @ 12:00AM'
   },
 ];
 
@@ -40,6 +43,7 @@ calls.forEach(function (call, index) {
         phone: call.phone,
         description: call.description,
         completed: call.completed,
+        time: call.time,
         note: call.note || ''
       });
     }
