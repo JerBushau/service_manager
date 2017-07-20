@@ -1,7 +1,7 @@
 # Service manager application
 
 ### code Louisville FSJS Final Project
-This application was created to help track the progress of service calls until they are complete and filed into Quickbooks.
+This application was created to help track the progress of service calls until they are complete and filed into Quickbooks. It functions well, but I plan to continue work on it adding several features.
 
 ## To run the application:
   + install and/or start mongodb
