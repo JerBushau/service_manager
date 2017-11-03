@@ -9,7 +9,7 @@ var callSchema = new mongoose.Schema({
 	phone: String,
 	description: String,
 	note: String,
-	time: String,
+	time: { type: Date, default: Date.now },
 	completed: Boolean,
 	noted:Boolean
 });

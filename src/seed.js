@@ -10,7 +10,7 @@ var calls = [
     phone: '123-321-1233',
     description: 'Paul said "Some stuff happened and now our refrigeration is broken..." Bill is on the way.',
     completed: false,
-    time: '07-14-2017 @ 10:00AM'
+    time: new Date(2015, 6, 7, 1, 50)
   },
   {
     businessName: 'Food store',
@@ -20,7 +20,7 @@ var calls = [
     description: 'refrigerator is running...',
     note: 'fast!',
     completed: false,
-    time: '07-14-2017 @ 11:00AM'
+    time: new Date(2014, 10, 4, 1, 10)
   },
   {
     businessName: 'The Bar',
@@ -29,7 +29,7 @@ var calls = [
     phone: '123-321-0000',
     description: 'Beer ain\'t coldnuff.',
     completed: false,
-    time: '07-14-2017 @ 12:00AM'
+    time: new Date(2013, 2, 1, 30, 10)
   },
 ];
 

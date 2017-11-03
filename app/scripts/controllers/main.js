@@ -19,14 +19,12 @@ function MainCtrl ($scope, dataService) {
 
   // add new call
   $scope.addCall = function(call) {
-    $scope.call.time = new Date();
     $scope.calls.unshift({
       businessName: call.businessName,
   	  contactName: call.contactName,
       tech: call.tech,
   	  phone: call.phone,
   	  description: call.description,
-      time: call.time,
   	  completed: false
     });
 
