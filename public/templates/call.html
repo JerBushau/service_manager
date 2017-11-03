@@ -1,10 +1,18 @@
-<div 
+<div
   class="call serviceCall"
   ng-class="{'edited': call.edited, 'completed': call.completed}"
   ng-repeat="call in calls | orderBy: prop: reverse | filter: status | filter: search"
   ng-init="call.completed = call.completed">
 
   <div class="actions" ng-show="editing">
+
+    <!-- <div class="chkbox">
+      <input
+      type="checkbox"
+      ng-model="call.markedForDeletion"/>
+      <span ng-click="call.markedForDeletion  = !call.markedForDeletion"></span>
+      <label>Mark for DELETION</label>
+    </div> -->
 
     <div class="chkbox">
       <input
@@ -19,9 +27,9 @@
     class="delete"
     ng-click="deleteCall(call, $index)">Delete</a>
 
-    <a 
-    href="" 
-    class="save" 
+    <a
+    href=""
+    class="save"
     ng-click="saveCall(call); editing = false">Save</a>
 
   </div>
@@ -29,77 +37,77 @@
   <label class="time">{{call.time | date:'MM-dd-yyyy @ hh:mma'}}</label>
   <br>
 
-  <label 
-  class="name" 
-  ng-click="editing=true" 
+  <label
+  class="name"
+  ng-click="editing=true"
   ng-hide="editing">{{call.contactName}}</label>
 
-  <input 
-  class="editingLabel" 
-  placeholder="contact name" 
-  ng-model="call.contactName" 
+  <input
+  class="editingLabel"
+  placeholder="contact name"
+  ng-model="call.contactName"
   ng-show="editing"/>
-  
+
   <label ng-hide="editing"><small>with</small></label>
 
-  <label 
-  class="name" 
-  ng-click="editing=true" 
+  <label
+  class="name"
+  ng-click="editing=true"
   ng-hide="editing">{{call.businessName}}</label>
 
-  <input 
-  class="editingLabel" 
-  placeholder="business name" 
-  ng-model="call.businessName" 
+  <input
+  class="editingLabel"
+  placeholder="business name"
+  ng-model="call.businessName"
   ng-show="editing"/>
   <br>
 
-  <label 
-  ng-click="editing=true" 
+  <label
+  ng-click="editing=true"
   ng-hide="editing"><small>tech: </small>{{call.tech}}</label>
 
-  <input 
-  class="editingLabel" 
-  placeholder="tech" 
-  ng-model="call.tech" 
+  <input
+  class="editingLabel"
+  placeholder="tech"
+  ng-model="call.tech"
   ng-show="editing"/>
   <br>
 
-  <label 
-  ng-click="editing=true" 
+  <label
+  ng-click="editing=true"
   ng-hide="editing"><small>phone: </small>{{call.phone}}</label>
 
-  <input 
-  class="editingLabel" 
-  placeholder="phone" 
-  ng-model="call.phone" 
+  <input
+  class="editingLabel"
+  placeholder="phone"
+  ng-model="call.phone"
   ng-show="editing"/>
   <br>
   <br>
 
-  <label 
-  class="descrip" 
-  ng-click="editing=true" 
+  <label
+  class="descrip"
+  ng-click="editing=true"
   ng-hide="editing">{{call.description}}
-    <label class="descrip noted" 
-    ng-click="editing=true" 
+    <label class="descrip noted"
+    ng-click="editing=true"
     ng-hide="editing || !call.note">{{call.note}}</label>
   </label>
 
-  <textarea 
-  class="editingTextarea" 
-  rows="6" 
-  cols="47" 
-  placeholder="description" 
-  ng-model="call.description" 
+  <textarea
+  class="editingTextarea"
+  rows="6"
+  cols="47"
+  placeholder="description"
+  ng-model="call.description"
   ng-show="editing"></textarea>
 
-  <textarea 
-  class="editingTextarea" 
-  rows="6" 
-  cols="47" 
-  placeholder="Enter additional notes here." 
-  ng-model="call.note" 
+  <textarea
+  class="editingTextarea"
+  rows="6"
+  cols="47"
+  placeholder="Enter additional notes here."
+  ng-model="call.note"
   ng-show="editing"></textarea>
 
 </div>

@@ -15,7 +15,7 @@ To edit entries simply click on any of the text you'd like to edit and you will 
 
 ## Setting up for development:
   + install and/or start mongodb
-  + if you don't have sass installed, you can get it [here](http://sass-lang.com/install)
+  + if you do not have sass installed, you can get it [here](http://sass-lang.com/install)
   + if you do not have nodemon run `npm install -g nodemon`
   + `git clone` repo
   + run `npm install`
