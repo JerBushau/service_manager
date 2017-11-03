@@ -282,7 +282,7 @@ nav {
   transition: background-color .5s; }
   .toggleBtn:hover {
     color: #444444;
-    background-color: #EFEFEF; }
+    background-color: grey; }
   .toggleBtn:active {
     background-color: #adadad; }
   @media screen and (max-width: 860px) {
